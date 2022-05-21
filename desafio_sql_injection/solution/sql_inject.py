@@ -25,7 +25,7 @@ def login():
     response = session.post(form_url, data=payload, headers=headers)
 
 
-def setting_difficulty():
+def set_difficulty():
     form_url = "http://vps.flavioprofessor.com.br/dvwa/security.php"
     payload = {
         "security": "low",
@@ -91,7 +91,7 @@ def get_value_from_table(database, table, *args) -> list:
 
 if __name__ == "__main__":
     login()
-    setting_difficulty()
+    set_difficulty()
 
     while True:
         databases = get_allowed_databases()
