@@ -6,7 +6,7 @@ headers = {"User-Agent": "Mozilla/5.0"}
 
 
 def get_user_token(url) -> str:
-    user_token = session.get("http://vps.flavioprofessor.com.br/dvwa/login.php")
+    user_token = session.get(url)
     user_token = BeautifulSoup(user_token.text, "html.parser")
     user_token = user_token.find("input", {"name": "user_token"})
 
